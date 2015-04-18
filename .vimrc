@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/vundle.git/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 Bundle 'gtags.vim'
@@ -229,7 +229,7 @@ filetype plugin on
 map <silent> <f4> :call BufferList()<CR>
 
 " yankring.vim {{{1
-let g:yankring_history_dir=$HOME/.tmp
+let g:yankring_history_dir="$HOME/.tmp"
 
 " smartword.vim {{{1
 map w <Plug>(smartword-w)
