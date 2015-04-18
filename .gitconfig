@@ -1,4 +1,6 @@
-
+[user]
+    name =
+    email =
 [alias]
     st = status
     di = diff
@@ -9,4 +11,4 @@
     ci = commit
     sb = show-branch
 [color]
-    ui = auto
+    ui = true
