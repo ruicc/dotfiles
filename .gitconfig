@@ -1,0 +1,12 @@
+
+[alias]
+    st = status
+    di = diff
+    ds = diff --staged
+    co = checkout
+    br = branch
+    ov = log --graph
+    ci = commit
+    sb = show-branch
+[color]
+    ui = auto
