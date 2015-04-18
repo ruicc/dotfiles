@@ -78,8 +78,8 @@ set shiftwidth=4
 set softtabstop=4
 
 " backup
-set backupdir=$HOME/tmp
-set directory=$HOME/tmp
+set backupdir=$HOME/.tmp
+set directory=$HOME/.tmp
 
 "日本語入力中にカーソルの色を変更する
 if has('multi_byte_ime') || has('xim')
@@ -229,7 +229,7 @@ filetype plugin on
 map <silent> <f4> :call BufferList()<CR>
 
 " yankring.vim {{{1
-let g:yankring_history_dir=$HOME."/.vim/tmp"
+let g:yankring_history_dir=$HOME/.tmp
 
 " smartword.vim {{{1
 map w <Plug>(smartword-w)
