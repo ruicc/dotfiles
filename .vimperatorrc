@@ -1,0 +1,58 @@
+colorscheme sweets_snaka
+
+noremap j 6j
+noremap k 6k
+noremap J <c-d>
+noremap K <c-u>
+noremap h <c-p>
+noremap l <c-n>
+noremap z <a-left>
+noremap x <a-right>
+noremap o <a-left>
+noremap i <a-right>
+noremap p d
+
+noremap <c-v> <c-v><c-v>
+noremap <c-c> <c-v><c-c>
+noremap <c-x> <c-v><c-x>
+
+inoremap <c-h> <bs>
+inoremap <c-p> <up>
+inoremap <c-n> <down>
+inoremap <c-f> <right>
+inoremap <c-b> <left>
+inoremap <c-a> <home>
+inoremap <c-e> <end>
+
+cnoremap <c-f> <right>
+cnoremap <c-b> <left>
+cnoremap <c-p> <up>
+cnoremap <c-n> <down>
+cnoremap <c-a> <home>
+cnoremap <c-e> <end>
+
+set complete=l
+"set wildoptions=auto
+noremap ,s :source ~/.vimperatorrc<CR>
+noremap ,m :set go!=m <cr>
+noremap ,n :nohlsearch<cr>
+
+set visualbell
+highlight Bell display:none
+set noerrorbells
+
+" Firemobilesimulator
+"noremap ,i :fms P705iμ<cr>
+"noremap ,o :fms off<cr>
+
+" hatebu
+"noremap b :sbm<space>
+"noremap B :bentry<cr>
+
+" direct_bookmark.js
+"let g:direct_sbm_use_services_by_tag = "h"
+"let g:direct_sbm_use_services_by_post = "h"
+
+" ime_controller.js
+":let g:ex_ime_mode = "disabled"
+":let g:textarea_ime_mode = "disabled"
