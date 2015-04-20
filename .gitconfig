@@ -1,14 +1,22 @@
 [user]
-    name =
-    email =
+	email =
+	name =
 [alias]
-    st = status
-    di = diff
-    ds = diff --staged
-    co = checkout
-    br = branch
-    ov = log --graph
-    ci = commit
-    sb = show-branch
+	di = diff --color-words
+	ds = diff --color-words --staged
+	st = status
+	ci = commit
+	sh = show
+	br = branch
+	co = checkout
+	sb = show-branch
+	ov = log --graph --stat --date-order ; ov means `overview'
 [color]
-    ui = true
+	ui = auto
+[core]
+	excludesfile = ~/.gitignore
+	whitespace = trailing-space,space-before-tab
+	precomposeunicode = true
+	quotepath = false
+[push]
+	default = simple
