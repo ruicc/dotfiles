@@ -4,6 +4,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
+Bundle 'sudo.vim'
 Bundle 'gtags.vim'
 "Bundle 'monday'
 Bundle 'TwitVim'
@@ -43,8 +44,7 @@ filetype plugin indent on
 
 syntax on
 set t_Co=256
-colorscheme hhdcyan
-"colorscheme ir_black
+colorscheme hybrid
 
 "cmapclear
 "imapclear
@@ -59,6 +59,8 @@ set autoindent
 set visualbell
 set whichwrap=b,s,h,l,<,>,[,],~
 set backspace=indent,eol,start
+set modeline
+set modelines=4
 
 "encoding
 let &termencoding = &encoding
@@ -117,7 +119,10 @@ set mousehide
 "map <MouseUp> <Nop>
 
 " tags
-"set tags=
+set tags=.tags
+
+" TagList
+"let tlist_objc_settings    = 'objc;i:interface;c:class;m:method;p:property'
 
 " fakeclip
 "map gy "*y
