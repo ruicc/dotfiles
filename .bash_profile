@@ -9,9 +9,9 @@ fi
 
 export LC_ALL=ja_JP.utf8
 export LANGUAGE=ja_JP.utf8
-export EDITOR=$HOME/usr/bin/vim
+export EDITOR=vim
 
-PATH=$HOME/usr/bin:$PATH
+PATH=$HOME/.local/bin:$PATH
 export PATH
 
 export LD_LIBRARY_PATH=$HOME/usr/lib
