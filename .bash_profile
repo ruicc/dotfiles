@@ -14,7 +14,7 @@ export EDITOR=vim
 PATH=$HOME/.local/bin:$PATH
 export PATH
 
-export LD_LIBRARY_PATH=$HOME/usr/lib
+export LD_LIBRARY_PATH=$HOME/.local/lib
 
 source $HOME/.ssh_auth_sock
 
