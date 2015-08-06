@@ -54,6 +54,7 @@ colorscheme hybrid
 "xmapclear
 "smapclear
 
+set shell=/bin/zsh
 set number
 set autoindent
 set visualbell
