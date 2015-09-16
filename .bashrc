@@ -10,9 +10,7 @@ fi
 #PS1="[\t][\u@dev_gundam.jp(\h):\w]\$ "
 PS1="\[\033[1;34m\][\$(date +%H:%M)][\u@\h:\w]\[\033[0m\]\[\033[1;31m\]\$(cur_branch)\[\033[0m\]\$(show_prompts) "
 
-export LANG=ja_JP.UTF-8
-export EDITOR=$HOME/bin/vim
-
+alias vi="vim"
 alias rm="rm -i"
 alias ls="ls -F --color"
 alias la="ls -Fa --color"
