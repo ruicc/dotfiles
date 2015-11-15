@@ -17,13 +17,13 @@ Bundle 'kana/vim-surround'
 
 Bundle 'Shougo/vimproc'
 Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/vimshell'
-Bundle 'Shougo/vimfiler'
+"Bundle 'Shougo/vimshell'
+"Bundle 'Shougo/vimfiler'
 Bundle 'Shougo/unite.vim'
-Bundle 'h1mesuke/unite-outline'
+"Bundle 'h1mesuke/unite-outline'
 
-Bundle 'scrooloose/nerdtree'
-Bundle 'majutsushi/tagbar'
+"Bundle 'scrooloose/nerdtree'
+"Bundle 'majutsushi/tagbar'
 
 Bundle 'thinca/vim-quickrun'
 Bundle 'thinca/vim-ref'
@@ -31,10 +31,16 @@ Bundle 'thinca/vim-ref'
 " for haskell
 Bundle 'ujihisa/neco-ghc'
 Bundle 'eagletmt/ghcmod-vim'
-Bundle 'eagletmt/unite-haddock'
+"Bundle 'eagletmt/unite-haddock'
 
 " for coq
 Bundle 'eagletmt/coqtop-vim'
+
+" for rust
+Plugin 'rust-lang/rust.vim'
+
+" for scala
+Bundle 'derekwyatt/vim-scala'
 
 " others
 Bundle 'scrooloose/syntastic' 
