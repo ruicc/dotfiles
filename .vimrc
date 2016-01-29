@@ -90,6 +90,9 @@ set softtabstop=4
 set backupdir=$HOME/.tmp
 set directory=$HOME/.tmp
 
+" Delete trailing spaces by <F5>
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
 "日本語入力中にカーソルの色を変更する
 if has('multi_byte_ime') || has('xim')
 " 日本語入力ON時のカーソルの色を設定
