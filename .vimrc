@@ -92,6 +92,9 @@ set directory=$HOME/.tmp
 
 " Delete trailing spaces by <F5>
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+" tabs
+nnoremap <silent> tn :tabnext<CR>
+nnoremap <silent> tp :tabprevious<CR>
 
 "日本語入力中にカーソルの色を変更する
 if has('multi_byte_ime') || has('xim')
