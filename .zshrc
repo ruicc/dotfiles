@@ -4,7 +4,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="steeef"
+ZSH_THEME="steeef_custom"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -48,7 +48,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$HOME/.node_modules_global/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 export LD_LIBRARY_PATH=$HOME/.local/lib
 
@@ -73,6 +73,13 @@ export LANG=ja_JP.UTF-8
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 source $HOME/.ssh_auth_sock
+
+# java(OSX)
+if [ $(uname) = "Darwin" ]; then
+    export JAVA_HOME=$(/usr/libexec/java_home)
+fi
+
+export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh

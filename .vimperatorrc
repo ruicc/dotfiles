@@ -1,20 +1,22 @@
 "colorscheme sweets_snaka
 
-noremap j 6j
-noremap k 6k
-noremap J <c-d>
-noremap K <c-u>
-noremap h <c-p>
-noremap l <c-n>
-noremap z <a-left>
-noremap x <a-right>
-noremap o <a-left>
-noremap i <a-right>
-noremap p d
+nnoremap j 6j
+nnoremap k 6k
+nnoremap J <c-d>
+nnoremap K <c-u>
+nnoremap h <c-p>
+nnoremap l <c-n>
+nnoremap z <a-left>
+nnoremap x <a-right>
+nnoremap o <a-left>
+nnoremap i <a-right>
+nnoremap p d
+nnoremap <C-y> 2k
+nnoremap <C-e> 2j
 
-noremap <c-v> <c-v><c-v>
-noremap <c-c> <c-v><c-c>
-noremap <c-x> <c-v><c-x>
+nnoremap <c-v> <c-v><c-v>
+nnoremap <c-c> <c-v><c-c>
+nnoremap <c-x> <c-v><c-x>
 
 inoremap <c-h> <bs>
 inoremap <c-p> <up>

@@ -43,7 +43,7 @@ Plugin 'rust-lang/rust.vim'
 Bundle 'derekwyatt/vim-scala'
 
 " others
-Bundle 'scrooloose/syntastic' 
+Bundle 'scrooloose/syntastic'
 
 filetype plugin indent on
 
@@ -347,5 +347,5 @@ endif
 "hi Pmenu ctermbg=lightgray ctermfg=black
 """ 選択部
 "hi PmenuSel ctermbg=red ctermfg=black
-"hi PmenuSbar	
-"hi PmenuThumb	
+"hi PmenuSbar
+"hi PmenuThumb
