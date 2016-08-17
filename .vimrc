@@ -42,8 +42,15 @@ Plugin 'rust-lang/rust.vim'
 " for scala
 Bundle 'derekwyatt/vim-scala'
 
+" for Typescript
+Bundle 'leafgarland/typescript-vim'
+
 " others
 Bundle 'scrooloose/syntastic'
+
+Bundle 'solarnz/thrift.vim'
+Bundle 'ntpeters/vim-better-whitespace'
+
 
 filetype plugin indent on
 
@@ -51,6 +58,10 @@ filetype plugin indent on
 syntax on
 set t_Co=256
 colorscheme hybrid
+
+
+autocmd BufRead,BufNewFile *.ts set filetype=typescript
+autocmd FileType typescript :set makeprg=make
 
 "cmapclear
 "imapclear
@@ -85,6 +96,7 @@ set showcmd
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set expandtab
 
 " backup
 set backupdir=$HOME/.tmp
@@ -145,16 +157,30 @@ set tags=.tags
 "    map gP (fakeclip-screen-p)
 "endif
 
-" maximize current window
-nnoremap <c-w>m :resize<cr>:vertical resize 120<cr>
+" Adjust window size
+" f: Focus
+nnoremap <silent> <c-w>f :resize<cr>:vertical resize 140<cr>
+" t: Tall
+nnoremap <silent> <c-w>t z200<cr>
+" w: Wide
+nnoremap <silent> <c-w>w 800<c-w>>
+nnoremap <silent> <c-w>> 40<c-w>>
+nnoremap <silent> <c-w>< 40<c-w><
 
 "general mapping {{{1
 noremap j gj
 noremap k gk
 noremap <c-e> 5<c-e>
 noremap <c-y> 5<c-y>
-noremap * :<c-u>set noincsearch<cr>yiwh/\<<c-r>"\><cr>:<c-u>set incsearch<cr>
-noremap # :<c-u>set noincsearch<cr>yiwel?\<<c-r>"\><cr>:<c-u>set incsearch<cr>
+noremap <silent> * :<c-u>set noincsearch<cr>yiw/\<<c-r>"\><cr>N:<c-u>set incsearch<cr>
+noremap <silent> # :<c-u>set noincsearch<cr>yiw?\<<c-r>"\><cr>N:<c-u>set incsearch<cr>
+noremap <silent> g* :<c-u>set noincsearch<cr>yiw/\c<c-r>"<cr>N:<c-u>set incsearch<cr>
+noremap <silent> g# :<c-u>set noincsearch<cr>yiw?\c<c-r>"<cr>N:<c-u>set incsearch<cr>
+vnoremap <silent> * y:<c-u>set noincsearch<cr>/<c-r>"<cr>N:<c-u>set incsearch<cr>
+vnoremap <silent> # y:<c-u>set noincsearch<cr>?<c-r>"<cr>N:<c-u>set incsearch<cr>
+vnoremap <silent> g* y:<c-u>set noincsearch<cr>/\c<c-r>"<cr>N:<c-u>set incsearch<cr>
+vnoremap <silent> g# y:<c-u>set noincsearch<cr>?\c<c-r>"<cr>N:<c-u>set incsearch<cr>
+"vnoremap <silent> * y:<c-u>echo 'hey: <c-r>"'<cr>
 noremap zh 20zh
 noremap zl 20zl
 "noremap <leader><leader> :w<cr>
