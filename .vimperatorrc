@@ -1,5 +1,12 @@
 "colorscheme sweets_snaka
 
+" disalbe zooming
+map zi <nop>
+map zo <nop>
+map zm <nop>
+map zz <nop>
+map zr <nop>
+
 nnoremap j 6j
 nnoremap k 6k
 nnoremap J <c-d>
