@@ -123,6 +123,31 @@ set incsearch
 set wrapscan
 set hlsearch
 
+function! s:GetVisualSelection()
+    let [lnum1, col1] = getpos("'<")[1:2]
+    echom lnum1 . ", " . col1
+    let [lnum2, col2] = getpos("'>")[1:2]
+    echom lnum2 . ", " . col2
+    let lines = getline(lnum1, lnum2)
+    let lines[-1] = lines[-1][: col2 - (&selection == 'inclusive' ? 1 : 2)]
+    let lines[0] = lines[0][col1 - 1:]
+    return join(lines, "\n")
+endfunction
+
+function! s:Highlighting(text, isWordUnit)
+    if a:isWordUnit == 1
+        let @/ = '\<'.a:text.'\>'
+    else
+        let @/ = a:text
+    endif
+    return ":\<c-u>silent set hlsearch\<CR>"
+endfunction
+
+nnoremap <script> <expr> * <SID>Highlighting(expand('<cword>'), 1)
+nnoremap <script> <expr> g* <SID>Highlighting(expand('<cword>'), 0)
+vmap * <esc><visual-word-highlight>
+nmap <script> <expr> <visual-word-highlight> <SID>Highlighting(<SID>GetVisualSelection(), 0)
+
 " cursorline
 setlocal cursorline
 autocmd WinEnter * setlocal cursorline
@@ -172,15 +197,6 @@ noremap j gj
 noremap k gk
 noremap <c-e> 5<c-e>
 noremap <c-y> 5<c-y>
-noremap <silent> * :<c-u>set noincsearch<cr>yiw/\<<c-r>"\><cr>N:<c-u>set incsearch<cr>
-noremap <silent> # :<c-u>set noincsearch<cr>yiw?\<<c-r>"\><cr>N:<c-u>set incsearch<cr>
-noremap <silent> g* :<c-u>set noincsearch<cr>yiw/\c<c-r>"<cr>N:<c-u>set incsearch<cr>
-noremap <silent> g# :<c-u>set noincsearch<cr>yiw?\c<c-r>"<cr>N:<c-u>set incsearch<cr>
-vnoremap <silent> * y:<c-u>set noincsearch<cr>/<c-r>"<cr>N:<c-u>set incsearch<cr>
-vnoremap <silent> # y:<c-u>set noincsearch<cr>?<c-r>"<cr>N:<c-u>set incsearch<cr>
-vnoremap <silent> g* y:<c-u>set noincsearch<cr>/\c<c-r>"<cr>N:<c-u>set incsearch<cr>
-vnoremap <silent> g# y:<c-u>set noincsearch<cr>?\c<c-r>"<cr>N:<c-u>set incsearch<cr>
-"vnoremap <silent> * y:<c-u>echo 'hey: <c-r>"'<cr>
 noremap zh 20zh
 noremap zl 20zl
 "noremap <leader><leader> :w<cr>
@@ -375,3 +391,9 @@ endif
 "hi PmenuSel ctermbg=red ctermfg=black
 "hi PmenuSbar
 "hi PmenuThumb
+
+" syntastic
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypes": [],
+    \ "passive_filetypes": ["java"] }
