@@ -1,5 +1,7 @@
 "colorscheme sweets_snaka
 
+hi Hint font-family: monospace; font-size: 15px; font-weight: normal; color: lightyellow; background-color: black; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 5px 0px 5px;
+
 " disalbe zooming
 map zi <nop>
 map zo <nop>
