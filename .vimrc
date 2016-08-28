@@ -125,17 +125,15 @@ set hlsearch
 
 function! s:GetVisualSelection()
     let [lnum1, col1] = getpos("'<")[1:2]
-    echom lnum1 . ", " . col1
     let [lnum2, col2] = getpos("'>")[1:2]
-    echom lnum2 . ", " . col2
     let lines = getline(lnum1, lnum2)
     let lines[-1] = lines[-1][: col2 - (&selection == 'inclusive' ? 1 : 2)]
     let lines[0] = lines[0][col1 - 1:]
     return join(lines, "\n")
 endfunction
 
-function! s:Highlighting(text, isWordUnit)
-    if a:isWordUnit == 1
+function! s:Highlighting(text, checkWordBoundaries)
+    if a:checkWordBoundaries == 1
         let @/ = '\<'.a:text.'\>'
     else
         let @/ = a:text
