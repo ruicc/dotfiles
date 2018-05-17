@@ -45,6 +45,12 @@ Bundle 'derekwyatt/vim-scala'
 " for Typescript
 Bundle 'leafgarland/typescript-vim'
 
+" for haxe
+Plugin 'jdonaldson/vaxe'
+
+" for agda
+Plugin 'derekelkins/agda-vim'
+
 " others
 Bundle 'scrooloose/syntastic'
 
@@ -79,6 +85,7 @@ set whichwrap=b,s,h,l,<,>,[,],~
 set backspace=indent,eol,start
 set modeline
 set modelines=4
+"set clipboard=unnamed
 
 "encoding
 let &termencoding = &encoding
@@ -145,6 +152,11 @@ nnoremap <script> <expr> * <SID>Highlighting(expand('<cword>'), 1)
 nnoremap <script> <expr> g* <SID>Highlighting(expand('<cword>'), 0)
 vmap * <esc><visual-word-highlight>
 nmap <script> <expr> <visual-word-highlight> <SID>Highlighting(<SID>GetVisualSelection(), 0)
+
+" ctags
+nnoremap <C-]> :exe("ltag ".expand('<cword>')."\|lopen")<CR>
+nnoremap g<C-]> :exe("ltag ".expand('<cword>')."\|llist")<CR>
+
 
 " cursorline
 setlocal cursorline
@@ -395,3 +407,8 @@ let g:syntastic_mode_map = {
     \ "mode": "active",
     \ "active_filetypes": [],
     \ "passive_filetypes": ["java"] }
+
+
+" agda-vim {{{1
+"let g:agda_extraincpaths = ["/Users/ruicc/Works/agda/agda-stdlib/src"]
+"let maplocalleader = ","
