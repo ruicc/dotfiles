@@ -90,6 +90,20 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias adb="$ANDROID_HOME/platform-tools/adb"
+alias fiveserver="$HOME/Works/five/repo/Five"
+alias fiveview="$HOME/Works/five/repo/Five.view"
+alias fivesdk="$HOME/Works/five/repo/FiveSDK"
+alias fivelog="$HOME/Works/five/log"
+alias f1="$HOME/Works/five/repo/Five"
+alias f2="$HOME/Works/five/repo/Five.2"
+alias f3="$HOME/Works/five/repo/Five.3"
+alias fv="$HOME/Works/five/repo/Five.view"
+alias fm="$HOME/Works/five/repo/Five.master"
+alias fe="$HOME/Works/five/repo/FiveExperimental"
+alias fl="$HOME/Works/five/log"
+alias gr="git grep"
+
 # check if `docker-machine` command exists
 if command -v docker-machine > /dev/null; then
   # fetch the first running machine name
@@ -99,3 +113,4 @@ if command -v docker-machine > /dev/null; then
     export DOCKER_IP=$(docker-machine ip $machine)
   fi
 fi
+
