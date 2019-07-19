@@ -1,5 +1,5 @@
 
-FILES = .bash_profile .bashrc .gitconfig .ssh_auth_sock .tmux.conf .vimperatorrc .vimrc .zshrc .vim .vimperator .tmp
+FILES = .bash_profile .bashrc .gitconfig .ssh_auth_sock .tmux.conf .vimperatorrc .vimrc .zshrc .vim .vimperator .tmp .ctags
 
 deploy:
 	cp -a $(FILES) $(HOME)
