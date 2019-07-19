@@ -10,7 +10,7 @@
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo '('%F{blue}`basename $VIRTUAL_ENV`%f')'
+    [ $VIRTUAL_ENV ] && echo '('%F{blue}`basename $VIRTUAL_ENV`%f') '
 }
 PR_GIT_UPDATE=1
 
@@ -19,7 +19,7 @@ setopt prompt_subst
 autoload -U add-zsh-hook
 autoload -Uz vcs_info
 
-#use extended color pallete if available
+#use extended color palette if available
 if [[ $terminfo[colors] -ge 256 ]]; then
     turquoise="%F{81}"
     orange="%F{166}"
@@ -62,8 +62,11 @@ zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
 
 
 function steeef_preexec {
-    case "$(history $HISTCMD)" in
+    case "$2" in
         *git*)
+            PR_GIT_UPDATE=1
+            ;;
+        *hub*)
             PR_GIT_UPDATE=1
             ;;
         *svn*)

@@ -1,33 +1,22 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # Install homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install brew-cask(homebrew本体に入ったようだ)
 #brew install caskroom/cask/brew-cask
 
 # Keyconfig/OS environment
-#brew cask install karabiner
-#brew cask install seil
-#brew cask install showyedge
+brew cask install karabiner-elements
 
 # Daily use
-brew cask install firefox
-brew cask install google-chrome
-brew cask install dropbox
+brew cask install firefox google-chrome dropbox
 
 # Terminal/Editor
-brew cask install iterm2
-brew cask install macvim
+brew cask install iterm2 macvim
 
 # CUI tools
-brew install vim
-brew install tmux
-brew install zsh
-brew install coreutils
-brew install findutils
-brew install binutils
-brew install wget
+brew install vim tmux zsh coreutils findutils binutils wget
 
 # Development tools
 #brew cask install virtualbox
