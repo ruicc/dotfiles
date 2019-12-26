@@ -54,6 +54,10 @@ Plugin 'jdonaldson/vaxe'
 " for agda
 Plugin 'derekelkins/agda-vim'
 
+" for swift
+Plugin 'keith/swift.vim'
+Plugin 'udalov/kotlin-vim'
+
 " others
 Bundle 'scrooloose/syntastic'
 
@@ -206,6 +210,9 @@ nnoremap <silent> <c-w>t z200<cr>
 nnoremap <silent> <c-w>w 800<c-w>>
 nnoremap <silent> <c-w>> 40<c-w>>
 nnoremap <silent> <c-w>< 40<c-w><
+
+" split windows without resizing
+set noequalalways
 
 "general mapping {{{1
 noremap j gj
