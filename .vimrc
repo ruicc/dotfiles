@@ -93,7 +93,7 @@ set backspace=indent,eol,start
 set modeline
 set modelines=4
 "set clipboard=unnamed
-" Stop window auto resize
+" Stop auto window resize
 set noequalalways
 
 "encoding
@@ -210,9 +210,6 @@ nnoremap <silent> <c-w>t z200<cr>
 nnoremap <silent> <c-w>w 800<c-w>>
 nnoremap <silent> <c-w>> 40<c-w>>
 nnoremap <silent> <c-w>< 40<c-w><
-
-" split windows without resizing
-set noequalalways
 
 "general mapping {{{1
 noremap j gj
