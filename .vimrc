@@ -32,8 +32,8 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'thinca/vim-ref'
 
 " for haskell
-Bundle 'ujihisa/neco-ghc'
-Bundle 'eagletmt/ghcmod-vim'
+"Bundle 'ujihisa/neco-ghc'
+"Bundle 'eagletmt/ghcmod-vim'
 "Bundle 'eagletmt/unite-haddock'
 
 " for coq
@@ -89,6 +89,8 @@ set backspace=indent,eol,start
 set modeline
 set modelines=4
 "set clipboard=unnamed
+" Stop window auto resize
+set noequalalways
 
 "encoding
 let &termencoding = &encoding

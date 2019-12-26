@@ -114,3 +114,8 @@ if command -v docker-machine > /dev/null; then
   fi
 fi
 
+# ghcup
+source "$HOME/.ghcup/env"
+
+# nix
+#. /Users/ruicc/.nix-profile/etc/profile.d/nix.sh
