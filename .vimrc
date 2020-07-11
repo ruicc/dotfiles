@@ -72,8 +72,8 @@ Plug 'jdonaldson/vaxe'
 Plug 'derekelkins/agda-vim'
 
 " for swift
-Plugin 'keith/swift.vim'
-Plugin 'udalov/kotlin-vim'
+Plug 'keith/swift.vim'
+Plug 'udalov/kotlin-vim'
 
 " others
 Plug 'scrooloose/syntastic'
