@@ -71,6 +71,10 @@ Plug 'jdonaldson/vaxe'
 " for agda
 Plug 'derekelkins/agda-vim'
 
+" for swift
+Plugin 'keith/swift.vim'
+Plugin 'udalov/kotlin-vim'
+
 " others
 Plug 'scrooloose/syntastic'
 
@@ -110,6 +114,7 @@ set backspace=indent,eol,start
 set modeline
 set modelines=4
 "set clipboard=unnamed
+" Stop auto window resize
 set noequalalways
 
 "encoding

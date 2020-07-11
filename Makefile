@@ -1,5 +1,5 @@
 
-FILES = .bash_profile .bashrc .gitconfig .ssh_auth_sock .tmux.conf .vimperatorrc .vimrc .zshrc
+FILES = .bash_profile .bashrc .gitconfig .ssh_auth_sock .tmux.conf .vimperatorrc .vimrc .zshrc .ctags
 DIRS = .vim .tmp .vimperator
 
 deploy:
