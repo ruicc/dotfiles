@@ -1,6 +1,6 @@
 [user]
-	email =
-	name =
+    email =
+    name =
 [alias]
 	di = diff --color-words
 	ds = diff --color-words --staged
@@ -11,6 +11,8 @@
 	co = checkout
 	sb = show-branch
 	ov = log --graph --stat --date-order ; ov means `overview'
+    sw = switch
+    w  = worktree
 [color]
 	ui = auto
 [core]

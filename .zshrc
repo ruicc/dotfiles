@@ -5,6 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="steeef_custom"
+#ZSH_THEME="steeef"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,6 +50,8 @@ plugins=(git)
 # User configuration
 
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$HOME/.node_modules_global/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 export LD_LIBRARY_PATH=$HOME/.local/lib
 
@@ -101,8 +104,9 @@ alias f3="$HOME/Works/five/repo/Five.3"
 alias fv="$HOME/Works/five/repo/Five.view"
 alias fm="$HOME/Works/five/repo/Five.master"
 alias fe="$HOME/Works/five/repo/FiveExperimental"
-alias fl="$HOME/Works/five/log"
+alias fl="$HOME/Works/five/five-note"
 alias gr="git grep"
+alias s="git status"
 
 # check if `docker-machine` command exists
 if command -v docker-machine > /dev/null; then
