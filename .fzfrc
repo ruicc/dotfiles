@@ -1,0 +1,35 @@
+#!/usr/bin/env zsh
+# vim :set ft=zsh
+
+fzf_files_editor() {
+    if [[ -d "$PWD/.git" ]]; then
+        local files="$(git ls-files --cached --others --exclude-standard \
+            | grep -v node_modules \
+            | fzf --multi --preview 'cat {}' --query="$*")"
+    else
+        local files="$(find . -type f \
+            | grep -v node_modules \
+            | fzf --multi --preview 'cat {}' --query="$*")"
+    fi
+
+    if [ -n "$files" ]; then
+        $EDITOR $(echo $files | tr '\n' ' ') < /dev/tty
+    fi
+}
+fzf_select_repository() {
+    ghq list -p | fzf --select-1 --query="$*" | read line \
+    && cd $line
+}
+
+alias vif="fzf_files_editor"
+alias repo="fzf_select_repository"
+
+#determines search program for fzf
+if type ag &> /dev/null; then
+    export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
+fi
+#refer rg over ag
+if type rg &> /dev/null; then
+    export FZF_DEFAULT_COMMAND='rg --files --hidden'
+fi
+

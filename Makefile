@@ -1,11 +1,13 @@
 
-FILES = .bash_profile .bashrc .gitconfig .ssh_auth_sock .tmux.conf .vimrc .zshrc .ctags
-DIRS = .vim .tmp .iterm2
+FILES = .bash_profile .bashrc .gitconfig .ssh_auth_sock .tmux.conf .vimrc .zshrc .ctags .fzfrc
+DIRS = .vim .iterm2
+TMPDIR = .tmp
 
 deploy:
+	mkdir -p $(HOME)/$(TMPDIR)
+	mkdir -p $(HOME)/.oh-my-zsh/themes/
 	cp -a $(FILES) $(HOME)
 	cp -a $(DIRS) $(HOME)
-	mkdir -p $(HOME)/.oh-my-zsh/themes/
 	cp -a ./steeef_custom.zsh-theme $(HOME)/.oh-my-zsh/themes/
 
 drain:
