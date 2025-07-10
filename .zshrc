@@ -141,11 +141,13 @@ export FPATH="~/.nix-profile/share/zsh/site-functions/:$FPATH"
 
 # local settings
 if [ -f "$HOME/.localrc" ]; then
-  source "$HOME/.localrc"
+    source "$HOME/.localrc"
 fi
 
 # direnv
-eval "$(direnv hook zsh)"
+if $(command -v direnv); then
+    eval "$(direnv hook zsh)"
+fi
 
 # nvm
 #export NVM_DIR="$HOME/.nvm"
@@ -175,3 +177,4 @@ if [ -f '/Users/ruicc/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '
 
 
 [ -f "/Users/ruicc/.ghcup/env" ] && source "/Users/ruicc/.ghcup/env" # ghcup-env
+
