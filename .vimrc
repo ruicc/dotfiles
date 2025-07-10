@@ -25,11 +25,23 @@ Plug 'h1mesuke/vim-alignta'
 Plug 'kana/vim-smartword'
 Plug 'kana/vim-surround'
 
+" CamelCase/snake_case
+Plug 'nicwest/vim-camelsnek'
+" csv
+Plug 'mechatroner/rainbow_csv'
+
+" c++
+Plug 'rhysd/vim-clang-format'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'kana/vim-operator-user'
+
+
 "Plug 'Shougo/vimproc'
 "Plug 'Shougo/neocomplcache'
 "Plug 'Shougo/vimshell'
 "Plug 'Shougo/vimfiler'
 "Plug 'Shougo/unite.vim'
+Plug 'Shougo/vinarise.vim'
 "Plug 'h1mesuke/unite-outline'
 
 "Plug 'scrooloose/nerdtree'
@@ -37,6 +49,13 @@ Plug 'kana/vim-surround'
 
 Plug 'thinca/vim-quickrun'
 Plug 'thinca/vim-ref'
+
+" NOTE: fuzzyfinder requires L9
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" window swap
+Plug 'wesQ3/vim-windowswap'
 
 " lsp
 "Plug 'prabirshrestha/vim-lsp'
@@ -75,6 +94,12 @@ Plug 'derekelkins/agda-vim'
 Plug 'keith/swift.vim'
 Plug 'udalov/kotlin-vim'
 
+" nix
+Plug 'LnL7/vim-nix'
+
+" terraform
+Plug 'hashivim/vim-terraform'
+
 " others
 Plug 'scrooloose/syntastic'
 
@@ -96,6 +121,7 @@ colorscheme hybrid
 
 autocmd BufRead,BufNewFile *.ts set filetype=typescript
 autocmd FileType typescript :set makeprg=make
+autocmd QuickfixCmdPost make,grep,grepadd,vimgrep copen
 
 "cmapclear
 "imapclear
@@ -152,6 +178,18 @@ highlight CursorIM guibg=Purple guifg=NONE
 endif
 "Zenkaku-Space visualization
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
+" Change cursor appearances
+let &t_SI .= "\e[5 q"
+let &t_SR .= "\e[3 q"
+let &t_EI .= "\e[1 q"
+
+" ファイルの自動読み直しの設定でInsertモードに切り替わった時とウィンドウが移動した時にファイルを読み直すようにする
+if has("autocmd")
+  augroup vimrc-checktime
+    autocmd!
+    autocmd InsertEnter,WinEnter * checktime
+  augroup END
+endif
 
 "search
 set ignorecase
@@ -233,6 +271,7 @@ nnoremap <silent> <c-w>> 40<c-w>>
 nnoremap <silent> <c-w>< 40<c-w><
 
 "general mapping {{{1
+let mapleader = "\<Space>"
 noremap j gj
 noremap k gk
 noremap <c-e> 5<c-e>
@@ -247,6 +286,9 @@ nnoremap ,c <esc>:<c-u>cclose<cr>
 
 "inoremap <ESC> <ESC>:set iminsert=0<CR>
 
+" fuzzyfinder
+nnoremap <unique> <silent> <leader>f :Files<CR>
+nnoremap <unique> <silent> <leader>g :Ag<CR>
 
 " ref.vim {{{1
 let g:ref_phpmanual_path=$HOME."/.vim/ref/php-chunked-xhtml"
@@ -438,7 +480,17 @@ let g:syntastic_mode_map = {
     \ "active_filetypes": [],
     \ "passive_filetypes": ["java"] }
 
+let g:syntastic_cpp_checkers = ['clang_check']
 
 " agda-vim {{{1
 "let g:agda_extraincpaths = ["/Users/ruicc/Works/agda/agda-stdlib/src"]
 "let maplocalleader = ","
+
+" vim-clang-format
+let g:clang_format#style_options = {
+            \ "AccessModifierOffset" : -4,
+            \ "AllowShortIfStatementsOnASingleLine" : "true",
+            \ "AlwaysBreakTemplateDeclarations" : "true",
+            \ "Standard" : "C++17",
+            \ "BreakBeforeBraces" : "Stroustrup"}
+

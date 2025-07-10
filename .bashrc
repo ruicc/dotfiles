@@ -41,9 +41,11 @@ function cur_branch {
 
 	br=$(echo $(git symbolic-ref HEAD) | cut -d '/' -f 3-)
 	echo "(${br})"
-	
 }
 
 # for tmux
 export __CF_USER_TEXT_ENCODING=0x1FA:0x08000100:0
 export TMUX=tmux
+source "$HOME/.cargo/env"
+
+eval "$(direnv hook bash)"

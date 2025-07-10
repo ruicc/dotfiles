@@ -19,3 +19,5 @@ export LD_LIBRARY_PATH=$HOME/.local/lib
 source $HOME/.ssh_auth_sock
 
 exec zsh
+if [ -e /Users/ruicc/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/ruicc/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+source "$HOME/.cargo/env"
