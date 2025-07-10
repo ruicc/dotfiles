@@ -29,8 +29,7 @@
 [rebase]
     autosquash = true
 [credential]
-    helper = /nix/store/r9dfg5c33xil5p9chz15wmz4inkjbhkz-git-credential-manager-2.6.0/bin/git-credential-manager
-#    helper = /nix/store/82a5w57izqvvz1n7ddlg1mssrmvzz3gi-git-2.36.0/bin/git-credential-netrc
+    helper = /Users/ruicc/.nix-profile/bin/git-credential-manager
 
 [url "https://ruicc_herpinc@github.com/herp-inc-hq/"]
     insteadOf = https://github.com/herp-inc-hq/
