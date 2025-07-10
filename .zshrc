@@ -155,7 +155,7 @@ eval "$(direnv hook zsh)"
 # rustup
 if [ -f "$HOME/.cargo/env" ]; then
     source "$HOME/.cargo/env"
-if
+fi
 
 # MikanOS
 #export PATH=/usr/local/Cellar/llvm/12.0.0/bin:$PATH
