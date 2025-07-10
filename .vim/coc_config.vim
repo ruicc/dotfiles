@@ -133,3 +133,7 @@ nnoremap <silent> <space>tc :<C-u>CocCommand metals.tvp metalsCompile<CR>
 nnoremap <silent> <space>tb :<C-u>CocCommand metals.tvp metalsBuild<CR>
 " Reveal current current class (trait or object) in Tree View 'metalsPackages'
 nnoremap <silent> <space>tf :<C-u>CocCommand metals.revealInTreeView metalsPackages<CR>
+
+" Cf. https://github.com/neoclide/coc.nvim/wiki/F.A.Q#cursor-disappears-after-exiting-coclist
+let g:coc_disable_transparent_cursor = 1
+

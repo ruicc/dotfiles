@@ -1,6 +1,6 @@
 
 FILES = .bash_profile .bashrc .gitconfig .ssh_auth_sock .tmux.conf .vimrc .zshrc .ctags
-DIRS = .vim .tmp
+DIRS = .vim .tmp .iterm2
 
 deploy:
 	cp -a $(FILES) $(HOME)
@@ -9,6 +9,7 @@ deploy:
 
 drain:
 	for file in $(FILES); do cp -a $(HOME)/$${file} .; done
+	for dir in $(DIRS); do cp -a $(HOME)/$${dir} .; done
 
 karabiner-export:
 	/Applications/Karabiner.app/Contents/Library/bin/karabiner export > karabiner-import.sh

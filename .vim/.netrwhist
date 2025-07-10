@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/Users/ruicc/ghq/github.com/herp-inc/hub/domains/entities/career-page'
+let g:netrw_dirhist_1='/Users/ruicc/ghq/github.com/herp-inc/hub/domains/entities/requisition-v2/public-properties'
+let g:netrw_dirhist_0='/Users/ruicc/ghq/github.com/herp-inc/hub/domains/entities/requisition-v2/information-restricted-to-agents'
+let g:netrw_dirhist_9='/Users/ruicc/ghq/github.com/herp-inc/taglake/nix'
+let g:netrw_dirhist_8='/Users/ruicc/ghq/github.com/herp-inc/protos/haskell/nix/generated/privateSourceRepos'
+let g:netrw_dirhist_7='/Users/ruicc/ghq/github.com/herp-inc/herp-cd/herp/hub/base'
+let g:netrw_dirhist_6='/Users/ruicc/ghq/github.com/herp-inc/herp-cd/herp/hub/base/kustomizeconfig'
+let g:netrw_dirhist_5='/Users/ruicc/ghq/github.com/herp-inc/herp-cd/herp/hub/base'
+let g:netrw_dirhist_4='/Users/ruicc/ghq/github.com/herp-inc/hub/20250527-bulkoperation-multi-csv-problem'
+let g:netrw_dirhist_3='/Users/ruicc/ghq/github.com/herp-inc/taglake/nix'
