@@ -1,6 +1,6 @@
 
-FILES = .bash_profile .bashrc .gitconfig .ssh_auth_sock .tmux.conf .vimperatorrc .vimrc .zshrc .ctags
-DIRS = .vim .tmp .vimperator
+FILES = .bash_profile .bashrc .gitconfig .ssh_auth_sock .tmux.conf .vimrc .zshrc .ctags
+DIRS = .vim .tmp
 
 deploy:
 	cp -a $(FILES) $(HOME)
