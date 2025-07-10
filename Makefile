@@ -5,6 +5,7 @@ DIRS = .vim .tmp
 deploy:
 	cp -a $(FILES) $(HOME)
 	cp -a $(DIRS) $(HOME)
+	mkdir -p $(HOME)/.oh-my-zsh/themes/
 	cp -a ./steeef_custom.zsh-theme $(HOME)/.oh-my-zsh/themes/
 
 drain:
