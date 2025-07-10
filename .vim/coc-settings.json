@@ -1,0 +1,24 @@
+{
+  "languageserver": {
+    "haskell": {
+      "command": "haskell-language-server",
+      "args": [
+        "--lsp"
+      ],
+      "rootPatterns": [
+        ".stack.yaml",
+        ".hie-bios",
+        "BUILD.bazel",
+        "cabal.config",
+        "package.yaml",
+        "cabal.project",
+        "cabal.project.freeze"
+      ],
+      "filetypes": [
+        "hs",
+        "lhs",
+        "haskell"
+      ]
+    }
+  }
+}
