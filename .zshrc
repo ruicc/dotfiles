@@ -113,7 +113,9 @@ alias gr="git grep"
 alias s="git status"
 alias ls="ls --color=auto -GF"
 
-source "$HOME/.fzfrc"
+if [ -f "$HOME/.fzfrc" ]; then
+    source "$HOME/.fzfrc"
+fi
 
 # check if `docker-machine` command exists
 #if command -v docker-machine > /dev/null; then
@@ -151,7 +153,9 @@ eval "$(direnv hook zsh)"
 #[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # rustup
-source $HOME/.cargo/env
+if [ -f "$HOME/.cargo/env" ]; then
+    source "$HOME/.cargo/env"
+if
 
 # MikanOS
 #export PATH=/usr/local/Cellar/llvm/12.0.0/bin:$PATH
